@@ -15,61 +15,61 @@
         }
 
         body {
-            background-color: #050811;
+            background: linear-gradient(135deg, #050b18 0%, #0c162d 50%, #050b18 100%);
             color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 0 20px 40px 20px;
-            background-image: radial-gradient(circle at 80% 20%, rgba(37, 211, 102, 0.05) 0%, transparent 40%),
-                              radial-gradient(circle at 20% 80%, rgba(255, 230, 0, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
             overflow-x: hidden;
         }
 
         /* Ticker de Ofertas no Topo */
         .ticker-wrapper {
             width: 100vw;
-            background: #0f172a;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 8px 0;
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 230, 0, 0.2);
+            padding: 10px 0;
             overflow: hidden;
             white-space: nowrap;
             position: relative;
             margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
         .ticker-track {
             display: inline-block;
-            animation: tickerScroll 30s linear infinite;
+            animation: tickerScroll 32s linear infinite;
         }
 
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 4px 12px;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 11px;
-            margin-right: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 12px;
+            margin-right: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .ticker-item img {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             object-fit: contain;
-            background: #fff;
-            border-radius: 4px;
+            background: #ffffff;
+            border-radius: 6px;
             padding: 2px;
         }
 
         .ticker-item span.tag-ml {
             background: #ffe600;
             color: #111827;
-            padding: 1px 6px;
-            border-radius: 4px;
+            padding: 2px 8px;
+            border-radius: 6px;
             font-weight: 700;
         }
 
@@ -86,12 +86,12 @@
         .wrapper {
             width: 100%;
             max-width: 1050px;
-            background: rgba(17, 24, 39, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(13, 20, 36, 0.9);
+            border: 1px solid rgba(255, 230, 0, 0.15);
             border-radius: 28px;
             padding: 40px 50px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(16px);
             margin-bottom: 30px;
         }
 
@@ -106,14 +106,14 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(37, 211, 102, 0.1);
+            background: rgba(37, 211, 102, 0.12);
             color: #22c55e;
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
             margin-bottom: 20px;
-            border: 1px solid rgba(37, 211, 102, 0.2);
+            border: 1px solid rgba(37, 211, 102, 0.25);
         }
 
         h1 {
@@ -246,7 +246,7 @@
         }
 
         .iphone-mockup {
-            background: #111827;
+            background: #0b1325;
             border: 5px solid #374151;
             border-radius: 44px;
             padding: 14px 12px;
@@ -330,7 +330,7 @@
         }
 
         .product-bubble {
-            background: #1a2234;
+            background: #151d30;
             border-radius: 12px;
             padding: 10px;
             border: 1px solid rgba(255,255,255,0.08);
@@ -343,7 +343,7 @@
 
         .product-bubble:hover {
             border-color: #ffe600;
-            background: #222b3f;
+            background: #1c263d;
         }
 
         .product-bubble img {
@@ -397,11 +397,11 @@
             color: #22c55e;
         }
 
-        /* SEÇÃO ADICIONAL SOLICITADA ("Quer receber as próximas..." e "Como funciona") */
+        /* SEÇÃO ADICIONAL: "Quer receber as próximas..." */
         .cta-section {
             width: 100%;
             max-width: 1050px;
-            background: rgba(17, 24, 39, 0.9);
+            background: rgba(13, 20, 36, 0.9);
             border: 1px solid rgba(255, 230, 0, 0.25);
             border-radius: 28px;
             padding: 40px;
@@ -457,7 +457,7 @@
         }
 
         .step-card {
-            background: rgba(17, 24, 39, 0.85);
+            background: rgba(13, 20, 36, 0.9);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
             padding: 25px 20px;
@@ -566,17 +566,17 @@
     <!-- Ticker Animado no Topo -->
     <div class="ticker-wrapper">
         <div class="ticker-track">
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Tênis Esportivo Original R$ 149,90 <span class="price-off">-40%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Jogo de Toalhas Banho R$ 115,90 <span class="price-off">-42%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Smartwatch Bluetooth R$ 89,90 <span class="price-off">-50%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Parafusadeira a Bateria R$ 161,90 <span class="price-off">-35%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Lixeira Automática Sensor R$ 69,90 <span class="price-off">-45%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Tênis Esportivo Original R$ 149,90 <span class="price-off">-40%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Jogo de Toalhas Banho R$ 115,90 <span class="price-off">-42%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_123456-MLB74911122233_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Smartwatch Bluetooth R$ 89,90 <span class="price-off">-50%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_987654-MLB74933344455_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Parafusadeira a Bateria R$ 161,90 <span class="price-off">-35%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_456789-MLB74955566677_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Lixeira Automática Sensor R$ 69,90 <span class="price-off">-45%</span></div>
             <!-- Duplicado para loop infinito suave -->
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Tênis Esportivo Original R$ 149,90 <span class="price-off">-40%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Jogo de Toalhas Banho R$ 115,90 <span class="price-off">-42%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Smartwatch Bluetooth R$ 89,90 <span class="price-off">-50%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Parafusadeira a Bateria R$ 161,90 <span class="price-off">-35%</span></div>
-            <div class="ticker-item"><span class="tag-ml">Mercado Livre</span> Lixeira Automática Sensor R$ 69,90 <span class="price-off">-45%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Tênis Esportivo Original R$ 149,90 <span class="price-off">-40%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Jogo de Toalhas Banho R$ 115,90 <span class="price-off">-42%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_123456-MLB74911122233_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Smartwatch Bluetooth R$ 89,90 <span class="price-off">-50%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_987654-MLB74933344455_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Parafusadeira a Bateria R$ 161,90 <span class="price-off">-35%</span></div>
+            <div class="ticker-item"><img src="https://http2.mlstatic.com/D_NQ_NP_456789-MLB74955566677_022024-O.webp" alt="Produto"><span class="tag-ml">Mercado Livre</span> Lixeira Automática Sensor R$ 69,90 <span class="price-off">-45%</span></div>
         </div>
     </div>
 
@@ -640,7 +640,7 @@
                             
                             <!-- Produto 1 -->
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_994943-MLB70512821215_072023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">🔥 OFERTA DO DIA</span>
                                     <span class="product-title">Parafusadeira Furadeira a Bateria 12V</span>
@@ -653,7 +653,7 @@
 
                             <!-- Produto 2 -->
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_824551-MLB71234567890_082023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">⚡ SUPER DESCONTO</span>
                                     <span class="product-title">Kit Jogo de Toalhas Banho 5pçs</span>
@@ -666,7 +666,7 @@
 
                             <!-- Produto 3 -->
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_123456-MLB74911122233_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_912345-MLB70987654321_072023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_123456-MLB74911122233_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">🔥 RELÂMPAGO</span>
                                     <span class="product-title">Smartwatch Bluetooth Chamadas</span>
@@ -679,7 +679,7 @@
 
                             <!-- Produto 4 -->
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_987654-MLB74933344455_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_712345-MLB70123456789_072023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_987654-MLB74933344455_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">⚡ FRETE FULL</span>
                                     <span class="product-title">Mini Compressor Portátil Ar</span>
@@ -692,7 +692,7 @@
 
                             <!-- Duplicados para loop contínuo -->
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_994943-MLB70512821215_072023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">🔥 OFERTA DO DIA</span>
                                     <span class="product-title">Parafusadeira Furadeira a Bateria 12V</span>
@@ -704,7 +704,7 @@
                             </a>
 
                             <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="product-bubble">
-                                <img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_824551-MLB71234567890_082023-O.webp'">
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto">
                                 <div class="product-details">
                                     <span class="product-tag">⚡ SUPER DESCONTO</span>
                                     <span class="product-title">Kit Jogo de Toalhas Banho 5pçs</span>
