@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🤑REI DAS OFERTAS E CUPONS DO MERCADO LIVRE👑💰</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -116,16 +116,31 @@
             border: 1px solid rgba(37, 211, 102, 0.25);
         }
 
+        /* ESTILO MODERNO, GIGANTE E ANIMADO PARA O TÍTULO */
         h1 {
-            font-size: 34px;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 16px;
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 18px;
             letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #ffffff, #ffe600, #22c55e, #ffffff);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 6s ease infinite, pulseTitle 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 230, 0, 0.2);
         }
 
-        h1 span {
-            color: #ffe600;
+        @keyframes gradientText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseTitle {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
 
         .description {
@@ -552,7 +567,7 @@
                 padding: 25px 20px;
             }
             h1 {
-                font-size: 26px;
+                font-size: 28px;
             }
             .stats-grid {
                 grid-template-columns: 1fr;
@@ -583,12 +598,15 @@
     <!-- Bloco Principal -->
     <div class="wrapper">
         <div class="main-grid">
-            <!-- Coluna Esquerda: Textos & Botões -->
+            <!-- Coluna Esquerda: Título Animado, Textos & Botões -->
             <div>
                 <div class="badge-top">
                     <i class="fa-solid fa-robot"></i> ROBÔ ATIVO: Mercado Livre VIP
                 </div>
-                <h1>🤑REI DAS OFERTAS E CUPONS <span>DO MERCADO LIVRE</span>👑💰</h1>
+                
+                <!-- TÍTULO COM DESIGN MODERNO, GIGANTE E ANIMADO -->
+                <h1>🤑REI DAS OFERTAS E CUPONS DO MERCADO LIVRE👑💰</h1>
+
                 <p class="description">
                     Nosso robô acompanha o Mercado Livre o dia todo e manda no seu celular as ofertas com desconto de verdade.
                 </p>
