@@ -18,344 +18,386 @@
             background-color: #0b0f19;
             color: #ffffff;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-image: radial-gradient(circle at 80% 20%, rgba(255, 230, 0, 0.08) 0%, transparent 40%),
-                              radial-gradient(circle at 20% 80%, rgba(37, 211, 102, 0.06) 0%, transparent 40%);
+            padding-bottom: 50px;
         }
 
-        .wrapper {
-            width: 100%;
-            max-width: 1050px;
-            background: rgba(17, 24, 39, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 28px;
-            padding: 50px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
-        }
-
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .badge-top {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 230, 0, 0.12);
-            color: #ffe600;
-            padding: 6px 14px;
-            border-radius: 20px;
+        /* Banner Animado no Topo */
+        .marquee-container {
+            background: #ffe600;
+            color: #111827;
+            font-weight: 700;
             font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 230, 0, 0.2);
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
         }
 
-        h1 span {
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Header Principal */
+        header {
+            background: rgba(17, 24, 39, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area i {
+            font-size: 32px;
             color: #ffe600;
         }
 
-        .description {
-            font-size: 15px;
-            color: #9ca3af;
-            line-height: 1.6;
-            margin-bottom: 30px;
+        .logo-area h1 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #ffffff;
         }
 
-        .btn-group {
+        .social-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 10px;
         }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 22px;
-            border-radius: 14px;
-            font-size: 15px;
+        .header-btn {
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
             font-weight: 700;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-
-        .btn-content {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 8px;
+            transition: 0.3s;
         }
 
-        .btn i {
-            font-size: 22px;
+        .btn-wpp { background: #25d366; color: #fff; }
+        .btn-tg { background: #229ed9; color: #fff; }
+        .header-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+        /* Container Principal com Categorias e Vitrine */
+        .main-layout {
+            max-width: 1300px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 30px;
         }
 
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: #ffffff;
+        @media(max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .btn-telegram {
-            background-color: #229ed9;
-            color: #ffffff;
+        /* Sidebar de Categorias */
+        .categories-box {
+            background: rgba(17, 24, 39, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 20px;
+            height: fit-content;
         }
 
-        .btn-ml {
-            background-color: #ffe600;
-            color: #111827;
-        }
-
-        .btn-tag {
-            font-size: 11px;
-            background: rgba(0,0,0,0.2);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .features-list {
-            display: flex;
-            gap: 20px;
-            font-size: 13px;
-            color: #9ca3af;
-            flex-wrap: wrap;
-        }
-
-        .features-list span {
+        .categories-box h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffe600;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
 
-        .features-list i {
-            color: #25d366;
+        .category-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        /* Mockup do Celular */
-        .phone-mockup {
-            background: #000000;
-            border: 6px solid #2d3748;
-            border-radius: 32px;
-            padding: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-            max-width: 320px;
-            margin: 0 auto;
-        }
-
-        .chat-header {
+        .category-list li a {
             display: flex;
             align-items: center;
             gap: 10px;
-            border-bottom: 1px solid #1f2937;
-            padding-bottom: 12px;
+            padding: 10px 12px;
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 13px;
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .category-list li a:hover, .category-list li a.active {
+            background: rgba(255, 230, 0, 0.1);
+            color: #ffe600;
+            font-weight: 600;
+        }
+
+        /* Área de Ofertas */
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 230, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #ef4444;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 20px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            background: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            padding: 10px;
+        }
+
+        .product-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #e5e7eb;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            height: 38px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-prices {
             margin-bottom: 12px;
         }
 
-        .chat-avatar {
-            width: 36px;
-            height: 36px;
+        .old-price {
+            font-size: 11px;
+            color: #9ca3af;
+            text-decoration: line-through;
+        }
+
+        .current-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: #22c55e;
+        }
+
+        .btn-offer {
             background: #ffe600;
-            border-radius: 50%;
+            color: #111827;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #111827;
-            font-weight: bold;
+            gap: 6px;
+            margin-top: auto;
         }
 
-        .chat-info h4 {
-            font-size: 13px;
-            color: #fff;
-        }
-
-        .chat-info p {
-            font-size: 11px;
-            color: #9ca3af;
-        }
-
-        .chat-bubble {
-            background: #1f2937;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-left: 3px solid #ffe600;
-        }
-
-        .chat-title {
-            font-size: 11px;
-            font-weight: bold;
-            color: #ffe600;
-            margin-bottom: 4px;
-        }
-
-        .chat-text {
-            font-size: 12px;
-            color: #e5e7eb;
-            margin-bottom: 6px;
-        }
-
-        .chat-price {
-            font-size: 12px;
-            font-weight: bold;
-            color: #25d366;
-        }
-
-        /* Estatísticas inferiores */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 45px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 26px;
-            font-weight: 800;
-            color: #ffe600;
-            margin-bottom: 4px;
-        }
-
-        .stat-item p {
-            font-size: 12px;
-            color: #9ca3af;
-        }
-
-        @media (max-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            .wrapper {
-                padding: 25px 20px;
-            }
-            h1 {
-                font-size: 26px;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
+        .btn-offer:hover {
+            background: #ffcc00;
+            filter: brightness(1.05);
         }
     </style>
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="main-grid">
-            <!-- Coluna da Esquerda: Textos e Botões -->
-            <div>
-                <div class="badge-top">
-                    <i class="fa-solid fa-bolt"></i> CANAL VIP OFICIAL • MERCADO LIVRE
-                </div>
-                <h1>🤑REI DAS OFERTAS E CUPONS <span>DO MERCADO LIVRE</span>👑💰</h1>
-                <p class="description">
-                    Pare de pagar preço cheio! Nosso robô monitora o Mercado Livre o dia todo e envia direto no seu celular as melhores ofertas relâmpago, cupons secretos e descontos de verdade.
-                </p>
+    <!-- Banner Animado no Topo -->
+    <div class="marquee-container">
+        <div class="marquee-text">
+            🔥 FRETE GRÁTIS FULL NO MERCADO LIVRE • CUPONS RELÂMPAGO LIBERADOS DIARIAMENTE • APROVEITE OS MELHORES DESCONTOS DA INTERNET COM O REI DAS OFERTAS! 🚀
+        </div>
+    </div>
 
-                <div class="btn-group">
-                    <!-- WhatsApp (Substitua SEU_LINK_DO_WHATSAPP) -->
-                    <a href="https://chat.whatsapp.com/SEU_LINK_DO_WHATSAPP" target="_blank" class="btn btn-whatsapp">
-                        <div class="btn-content">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>Entrar no Grupo VIP do WhatsApp</span>
-                        </div>
-                        <span class="btn-tag">100% Grátis</span>
-                    </a>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-area">
+            <i class="fa-solid fa-crown"></i>
+            <h1>REI DAS OFERTAS E CUPONS</h1>
+        </div>
+        <div class="social-buttons">
+            <a href="https://chat.whatsapp.com/SEU_LINK_DO_WHATSAPP" target="_blank" class="header-btn btn-wpp">
+                <i class="fa-brands fa-whatsapp"></i> Grupo VIP
+            </a>
+            <a href="https://t.me/SEU_LINK_DO_TELEGRAM" target="_blank" class="header-btn btn-tg">
+                <i class="fa-brands fa-telegram"></i> Canal VIP
+            </a>
+        </div>
+    </header>
 
-                    <!-- Telegram (Substitua SEU_LINK_DO_TELEGRAM) -->
-                    <a href="https://t.me/SEU_LINK_DO_TELEGRAM" target="_blank" class="btn btn-telegram">
-                        <div class="btn-content">
-                            <i class="fa-brands fa-telegram"></i>
-                            <span>Entrar no Canal do Telegram</span>
-                        </div>
-                        <span class="btn-tag">Sem limite</span>
-                    </a>
+    <!-- Layout Principal -->
+    <div class="main-layout">
+        
+        <!-- Sidebar de Categorias -->
+        <div class="categories-box">
+            <h3><i class="fa-solid fa-bars"></i> Categorias</h3>
+            <ul class="category-list">
+                <li><a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="active"><i class="fa-solid fa-fire"></i> Destaques do Dia</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/celulares-telefones/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-mobile-screen"></i> Celulares & Tech</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/casa-moveis-decoracao/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-house"></i> Casa & Decoração</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/ferramentas/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-hammer"></i> Ferramentas</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/beleza-cuidado-pessoal/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-spa"></i> Beleza & Cuidados</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/esportes-fitness/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-bicycle"></i> Esporte & Lazer</a></li>
+                <li><a href="https://lista.mercadolivre.com.br/cupons/_CustId_201648031?tag=reidasofertasecupons" target="_blank"><i class="fa-solid fa-ticket"></i> Cupons Exclusivos</a></li>
+            </ul>
+        </div>
 
-                    <!-- Buscador Oficial com Afiliado -->
-                    <a href="https://lista.mercadolivre.com.br/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn btn-ml">
-                        <div class="btn-content">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <span>Buscar Ofertas no Mercado Livre</span>
-                        </div>
-                        <span class="btn-tag" style="background: rgba(0,0,0,0.1); color: #111827;">Busca Direta</span>
-                    </a>
-                </div>
-
-                <div class="features-list">
-                    <span><i class="fa-solid fa-check"></i> 100% grátis</span>
-                    <span><i class="fa-solid fa-check"></i> Só ofertas, sem conversa</span>
-                    <span><i class="fa-solid fa-check"></i> Saia quando quiser</span>
-                </div>
+        <!-- Vitrine de Ofertas Reais -->
+        <div>
+            <div class="section-title">
+                <i class="fa-solid fa-bolt" style="color: #ffe600;"></i> Ofertas em Destaque do Mercado Livre
             </div>
 
-            <!-- Coluna da Direita: Mockup Estilo Aplicativo -->
-            <div>
-                <div class="phone-mockup">
-                    <div class="chat-header">
-                        <div class="chat-avatar">
-                            <i class="fa-solid fa-crown"></i>
-                        </div>
-                        <div class="chat-info">
-                            <h4>Rei das Ofertas VIP</h4>
-                            <p>robô de promoções ativado</p>
-                        </div>
+            <div class="products-grid">
+                
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <span class="discount-badge">-35%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_784655-MLB74912345678_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_994943-MLB70512821215_072023-O.webp'">
+                    <div class="product-name">Parafusadeira Furadeira a Bateria 12V com Maleta Completa</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 249,90</div>
+                        <div class="current-price">R$ 161,90</div>
                     </div>
-
-                    <div class="chat-bubble">
-                        <div class="chat-title">🔥 SUPER DESCONTO | Mercado Livre</div>
-                        <div class="chat-text">Tênis Esportivo de Marca Original</div>
-                        <div class="chat-price">R$ 299,99 <span style="text-decoration: line-through; color: #9ca3af; font-size: 10px; font-weight: normal;">R$ 499,99</span></div>
-                    </div>
-
-                    <div class="chat-bubble" style="opacity: 0.85;">
-                        <div class="chat-title">⚡ CUPOM RELÂMPAGO</div>
-                        <div class="chat-text">Smartphone com Frete Grátis Full</div>
-                        <div class="chat-price">R$ 1.149,00 <span style="text-decoration: line-through; color: #9ca3af; font-size: 10px; font-weight: normal;">R$ 1.699,00</span></div>
-                    </div>
+                    <a href="https://lista.mercadolivre.com.br/parafusadeira/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
                 </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <span class="discount-badge">-42%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_654321-MLB74987654321_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_824551-MLB71234567890_082023-O.webp'">
+                    <div class="product-name">Kit Jogo de Toalhas Banho Gigante Extra Soft 5 Peças</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 199,90</div>
+                        <div class="current-price">R$ 115,90</div>
+                    </div>
+                    <a href="https://lista.mercadolivre.com.br/toalha-banho/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <span class="discount-badge">-50%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_123456-MLB74911122233_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_912345-MLB70987654321_072023-O.webp'">
+                    <div class="product-name">Smartwatch Relógio Inteligente Bluetooth Chamadas Esportivo</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 180,00</div>
+                        <div class="current-price">R$ 89,90</div>
+                    </div>
+                    <a href="https://lista.mercadolivre.com.br/smartwatch/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <span class="discount-badge">-28%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_987654-MLB74933344455_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_712345-MLB70123456789_072023-O.webp'">
+                    <div class="product-name">Mini Compressor de Ar Digital Portátil para Carro e Moto</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 139,90</div>
+                        <div class="current-price">R$ 99,90</div>
+                    </div>
+                    <a href="https://lista.mercadolivre.com.br/compressor-ar/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card">
+                    <span class="discount-badge">-45%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_456789-MLB74955566677_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_612345-MLB70345678901_072023-O.webp'">
+                    <div class="product-name">Lixeira Inteligente Automática com Sensor de Presença 12L</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 129,90</div>
+                        <div class="current-price">R$ 69,90</div>
+                    </div>
+                    <a href="https://lista.mercadolivre.com.br/lixeira-inteligente/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card">
+                    <span class="discount-badge">-30%</span>
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_321654-MLB74977788899_022024-O.webp" alt="Produto" class="product-img" onerror="this.src='https://http2.mlstatic.com/D_NQ_NP_812345-MLB70567890123_072023-O.webp'">
+                    <div class="product-name">Máquina de Acabamento Cortar Cabelo Barba Profissional</div>
+                    <div class="product-prices">
+                        <div class="old-price">Antes R$ 79,90</div>
+                        <div class="current-price">R$ 49,90</div>
+                    </div>
+                    <a href="https://lista.mercadolivre.com.br/maquina-cabelo/_CustId_201648031?tag=reidasofertasecupons" target="_blank" class="btn-offer">
+                        <i class="fa-solid fa-bag-shopping"></i> Ver Oferta
+                    </a>
+                </div>
+
             </div>
         </div>
 
-        <!-- Estatísticas Abaixo -->
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>ofertas enviadas por semana</p>
-            </div>
-            <div class="stat-item">
-                <h3>45%</h3>
-                <p>de desconto médio</p>
-            </div>
-            <div class="stat-item">
-                <h3>80%</h3>
-                <p>maior desconto da semana</p>
-            </div>
-        </div>
     </div>
 
 </body>
